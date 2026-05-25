@@ -10,13 +10,15 @@
 
     <body>
         <!-- search bar two radio buttons to change from showing only videos to showing only channels based on what was searched -->
-        <form action="{{ url_for('results')}}" method="POST" class="search-container">
+        <form action="{{ url_for('results') }}" method="POST" class="search-container">
             <input type='text' name='search' id="search" placeholder="Search" required></input>
 
-            <button type="submit">Submit</button>
+            <button class='submit-btn' type="submit">
+                <span class="submit-btn-icon"><ion-icon name="search-outline"></ion-icon></span>
+            </button>
             <br>
             <input type="radio" id="channel-btn" name='change-btn' value="channel-btn">
-            <label for="channel-btn" class="default-text change-to-channel-btn">Channels</label>
+            <label for="channel-btn" class="default-text change-to-channel-btn">Canais</label>
             
             <input type='radio' id="vidoe-btn" name="change-btn" value="vidoe-btn" checked>
             <label for="vidoe-btn" class="default-text change-to-video-btn">Videos</label>
@@ -37,7 +39,7 @@
                 
                 <div class="default-text ch-title">{{ channel_title }}</div>
                 <div class="default-text ch-custom-url">{{ ch_custom_url }}</div>
-                <div class="default-text sub-count">{{ ch_subscriber_count }} subscribers</div>
+                <div class="default-text sub-count">{{ ch_subscriber_count }} inscritos</div>
             
             </div>
         </div>
@@ -58,7 +60,7 @@
                             <!--channel videos title, date published, and view count-->
                             <div class="default-text in-channel-video-title">{{ row[1] }}</div>
                             <div class="default-text in-channel-video-date">{{ row[2] }}</div>
-                            <div class="default-text in-channel-view-count">{{ row[4] }} views</div>
+                            <div class="default-text in-channel-view-count">{{ row[4] }} visualizações</div>
                         </div>
                     </div>
                     
@@ -66,5 +68,8 @@
             {% endfor %}
         </div>
 
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>

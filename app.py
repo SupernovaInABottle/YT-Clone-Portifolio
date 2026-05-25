@@ -11,14 +11,13 @@ youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey=API_KEY)
 
 app = Flask(__name__)
 
-
 def is_short(video_id):
     url = f"https://www.youtube.com/shorts/{video_id}"
     response = requests.head(url, allow_redirects=False)
     return response.status_code == 200
 
 
-def format_subscribers(count):
+def format_big_numbers(count):
     count = int(count)
     if count >= 1_000_000:
         return f"{count / 1_000_000:.1f}M"
@@ -30,7 +29,7 @@ def format_subscribers(count):
 
 def parse_date(date):
     past_date = arrow.get(date)
-    return past_date.humanize()
+    return past_date.humanize(locale='pt-br')
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -102,7 +101,7 @@ def results():
             channel_id = channel_subscriber_response['items'][0]['id']
 
             row = []
-            row.extend([channel_id, format_subscribers(channel_subscriber_count), channel_title, ch_avatar_url])
+            row.extend([channel_id, format_big_numbers(channel_subscriber_count), channel_title, ch_avatar_url])
             channel_matrix.append(row)
 
         return render_template('results.html', channel_matrix=channel_matrix)
@@ -149,7 +148,7 @@ def results():
         date_published = parse_date(video_data_response['items'][0]['snippet']['publishedAt'])
         thumbnails = video_data_response['items'][0]['snippet']['thumbnails']
         thumbnail_url = thumbnails.get('medium')['url']
-        video_view_count = humanize.intword(video_view_count_response['items'][0]['statistics']['viewCount'])
+        video_view_count = format_big_numbers(video_view_count_response['items'][0]['statistics']['viewCount'])
 
         row = []
         row.extend([videoid, thumbnail_url, title, date_published, video_view_count])
@@ -253,7 +252,7 @@ def channel(ch_id):
 
     return render_template('channel.html', channel_title=channel_title,
                            ch_thumbnail_url=ch_thumbnail_url,
-                           ch_subscriber_count=format_subscribers(ch_subscriber_count),
+                           ch_subscriber_count=format_big_numbers(ch_subscriber_count),
                            ch_custom_url=ch_custom_url, ch_video_matrix=ch_video_matrix)
 
 

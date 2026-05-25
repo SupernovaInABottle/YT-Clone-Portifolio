@@ -11,12 +11,14 @@
     <body>
         <!-- search bar two radio buttons to change from showing only videos to showing only channels based on what was searched -->
         <form action="{{ url_for('results') }}" method="POST" class="search-container">
-            <input type='text' name='search' id="search" placeholder="Search" required></input>
+            <input type='text' name='search' id="search" placeholder="Pesquisar" required></input>
 
-            <button type="submit">Submit</button>
+            <button class='submit-btn' type="submit">
+                <span class="submit-btn-icon"><ion-icon name="search-outline"></ion-icon></span>
+            </button>
             <br>
             <input type="radio" id="channel-btn" name='change-btn' value="channel-btn">
-            <label for="channel-btn" class="default-text change-to-channel-btn">Channels</label>
+            <label for="channel-btn" class="default-text change-to-channel-btn">Canais</label>
             
             <input type='radio' id="vidoe-btn" name="change-btn" value="vidoe-btn" checked>
             <label for="vidoe-btn" class="default-text change-to-video-btn">Videos</label>
@@ -42,7 +44,7 @@
                             <!--channel title-->
                             <div class="default-text channel-name">{{ row[2] }}</div>
                             <!--channel sub count-->
-                            <div class="default-text channel-sub-count">{{ row[1] }} subscribers</div>
+                            <div class="default-text channel-sub-count">{{ row[1] }} inscritos</div>
                         </div>
                     </div>
                 </a>
@@ -69,13 +71,17 @@
                         <a href="http://www.youtube.com/embed/{{ row[0] }}">
                             <div class="default-text src-result-video-title">{{ row[2] }}</div>
                             <div class="default-text src-result-video-date">{{ row[3] }}</div>
-                            <div class="default-text src-result-video-view-count">{{ row[4] }}</div>
+                            <div class="default-text src-result-video-view-count">{{ row[4] }} visualizações</div>
                         </a>
                     </div>
                 </div>
             {% endfor %}
         </div>
 
+
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 
 </html>

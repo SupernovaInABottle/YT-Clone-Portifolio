@@ -12,14 +12,19 @@
         <form action="{{ url_for('results') }}" method="POST" class="search-container">
             <input type='text' name='search' id="search" placeholder="Search" required></input>
 
-            <button type="submit">Submit</button>
+            <button class='submit-btn' type="submit">
+                <span class="submit-btn-icon"><ion-icon name="search-outline"></ion-icon></span>
+            </button>
             <br>
             <input type="radio" id="channel-btn" name='change-btn' value="channel-btn">
-            <label for="channel-btn" class="default-text change-to-channel-btn">Channels</label>
+            <label for="channel-btn" class="default-text change-to-channel-btn">Canais</label>
             
             <input type='radio' id="vidoe-btn" name="change-btn" value="vidoe-btn" checked>
             <label for="vidoe-btn" class="default-text change-to-video-btn">Videos</label>
         </form>
 
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
