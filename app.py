@@ -2,10 +2,12 @@ import os
 import requests
 import arrow
 import humanize
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, url_for
 from googleapiclient.discovery import build
 import googleapiclient.discovery
 
+load_dotenv()
 API_KEY = os.getenv("API_KEY")
 youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey=API_KEY)
 
