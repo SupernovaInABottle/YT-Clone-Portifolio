@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(30, 30, 30);
+    background-color: var(--background-color);
 }
 
 a {
@@ -7,7 +7,7 @@ a {
 }
 
 :root {
-  --gray-line: #73777c;
+  --background-color: rgb(30, 30, 30);
   --white-text: #ffffff;
 }
 
@@ -133,11 +133,11 @@ a {
 
 /* channel video info */
 .ch-video-grid-container {
-    margin-left: 90px;
+    margin-left: 77px;
     margin-right: 40px;
 }
 
-.ch-video-grid {
+.ch-grid {
     display: inline-flex;
     margin-left: 20px;
     margin-top: 70px;
@@ -161,4 +161,12 @@ a {
 
 .in-channel-view-count {
     margin-top: 10px;
+}
+
+.stream-tab {
+    background-color: var(--background-color);
+}
+
+.video-tab {
+    background-color: var(--background-color);
 }

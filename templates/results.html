@@ -29,7 +29,7 @@
         <div class="ch-src-results">
             {% for row in channel_matrix %}
             <!--grabs and uses the channel id as the url of the channel page-->
-                <a href="{{ url_for('channel', ch_id=row[0]) }}">
+                <a href="{{ url_for('videos', ch_id=row[0]) }}">
                     <div class="channel-container">
                         <!--channel thumbnail-->
                         <div class="channel-avatar-container">

@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <title>Document</title>
+        <title>Videos</title>
     </head>
 
     <body>
@@ -44,9 +44,19 @@
             </div>
         </div>
 
-        <div class="ch-video-grid-container">
+        <div class="tab-container">
+            <a href="{{ url_for('videos', ch_id=ch_id) }}">
+                <button class="default-text video-tab">Videos</button>
+            </a>
+
+            <a href="{{ url_for('streams', ch_id=ch_id) }}">
+                <button class="default-text stream-tab">Ao Vivo</button>
+            </a>
+        </div>
+
+        <div id='Videos-tab' class="ch-video-grid-container">
             {% for row in ch_video_matrix %}
-                <div class="ch-video-grid">
+                <div class="ch-grid">
 
                     <div class="video-thumb-container">
                         <a href="http://www.youtube.com/embed/{{ row[0] }}">
@@ -67,7 +77,6 @@
                 </div>
             {% endfor %}
         </div>
-
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
