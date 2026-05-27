@@ -1,6 +1,6 @@
 (Update: Aba 'ao vivo' mostra corretamente mostra transmissoes que acontecerao no futuro, com data atualizada para mostrar quando acontecera, transmissoes ao vivo, e transmissoes completas)
 
-Uma cópia do YouTube para meu portfólio (não finalizado). Meu primeiro projeto para mostrar minhas abilidades, e para aprender um pouco sobre APIs.
+Uma cópia do YouTube para meu portfólio (não finalizado). Meu primeiro projeto para mostrar minhas abilidades, e para aprender sobre APIs.
 
 Se quiser checar o que eu fiz clique aqui -> https://yt-clone-portfolio.onrender.com
 
