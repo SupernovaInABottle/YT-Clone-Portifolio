@@ -1,4 +1,4 @@
-(Update: Aba 'ao vivo' mostra corretamente as transmissoes que acontecerao no futuro, com data atualizada para mostrar quando no futuro, transmissoes ao vivo, e transmissoes completas)
+(Update: Logica otimizada e duracao adicionada)
 
 Uma cópia do YouTube para meu portfólio (não finalizado). Meu primeiro projeto para mostrar minhas abilidades, e para aprender sobre APIs.
 
@@ -15,5 +15,6 @@ Caso o botão de canais seja clicado e algo é pesquisado o resultado abaixo é 
 <img width="1728" height="790" alt="Screenshot 2026-05-25 172515" src="https://github.com/user-attachments/assets/1e0fea72-4ffb-462b-86c9-c16e77a29816" />
 
 Caso um canal seja clicado o usuario sera redirecionada para a página abaixo.
-<img width="1730" height="796" alt="image" src="https://github.com/user-attachments/assets/e055b05e-4367-4f52-b2cc-0e6339538d4e" />
+<img width="1729" height="734" alt="image" src="https://github.com/user-attachments/assets/d0d41cb9-2612-4210-9a02-38d7af294be3" />
+
 
